@@ -5,48 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Submit Complaint | Mess Feedback and Complaint</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .feedback-form{max-width:720px;padding:10px 36px 36px;background:#fff;border:1px solid #cfd6df;border-top:6px solid #f2b01e;border-radius:10px;box-shadow:0 6px 0 rgba(29,43,83,.08)}
-    .feedback-form *{box-sizing:border-box}
-    .form-intro{margin:-12px 0 28px;color:#46547a}
-    fieldset{border:0;margin:26px 0 0;padding:0;min-width:0}
-    legend{float:left;width:100%;margin:0 0 18px;padding:10px 16px;background:#1d2b53;color:#fff;border-radius:10px;font-size:1.15rem;font-weight:700}
-    fieldset>.row,fieldset>.field{clear:both}
-    .field{margin-bottom:20px}
-    label,.label{display:block;margin-bottom:6px;font-size:.95rem;font-weight:600}
-    input[type=text],input[type=date],select,textarea{width:100%;height:46px;padding:11px 14px;border:1.5px solid #cfd6df;border-radius:10px;background:#e6eaf3;font:inherit;color:#1d2b53}
-    textarea{height:auto;min-height:120px;resize:vertical}
-    input:focus,select:focus,textarea:focus{outline:3px solid #1d2b53;outline-offset:1px;background:#fff}
-    .row{display:flex;flex-wrap:wrap;gap:0 24px}
-    .row .field{flex:1;min-width:220px}
-    .options{display:flex;flex-wrap:wrap;gap:10px}
-    .options label{margin:0;cursor:pointer}
-    .options input{position:absolute;opacity:0}
-    .options span{display:inline-block;padding:7px 22px;border:2px solid;border-radius:999px;background:#fff;font-weight:600}
-    .low span{border-color:#2f7d4e;color:#1d5a37} .medium span{border-color:#f2b01e;color:#6b4a00} .high span{border-color:#1d2b53}
-    .low input:checked+span{background:#2f7d4e;color:#fff} .medium input:checked+span{background:#f2b01e;color:#1d2b53}
-    .high input:checked+span{background:#1d2b53;color:#fff}
-    .options input:focus-visible+span{outline:3px solid #f2b01e;outline-offset:2px}
-    .submit-btn{display:block;width:100%;margin-top:30px;cursor:pointer}
-  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">Mess Feedback and Complaint</a>
-      <nav class="site-nav" aria-label="Main"><ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="submit.html" aria-current="page">Submit Complaint</a></li>
-        <li><a href="board.html">Complaints Board</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul></nav>
-    </div>
+  <header>
+    <a class="brand" href="index.html">Mess Feedback and Complaint</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a class="active" href="submit.html">Submit Complaint</a>
+      <a href="board.html">Complaints Board</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
-  <main><section class="section"><div class="container">
+  <main><section>
     <h2>Submit a Complaint</h2>
     <p class="form-intro">Tell us what went wrong. Fields marked * are required, and your name is optional.</p>
-    <form class="feedback-form" action="#" method="post">
+    <div class="msg" id="msg" role="status" hidden>Complaint submitted! <a href="board.html">View it on the board</a></div>
+    <form class="feedback-form" id="complaintForm">
       <fieldset>
         <legend>Your details</legend>
         <div class="row">
@@ -77,14 +52,14 @@
       </fieldset>
       <fieldset>
         <legend>Your feedback</legend>
-        <div class="field"><label for="comment">Describe the problem *</label><textarea id="comment" name="comment" rows="5" minlength="15" maxlength="500" required placeholder="What happened? Please be specific."></textarea></div>
+        <div class="field"><label for="comment">Describe the problem *</label><textarea id="comment" name="comment" rows="5" minlength="15" maxlength="500" required placeholder="What happened? Please be specific (15+ characters)."></textarea></div>
         <div class="field"><label for="suggestion">Your suggestion</label><input type="text" id="suggestion" name="suggestion" placeholder="How can this be improved? (optional)"></div>
       </fieldset>
-      <button type="submit" class="btn btn-accent submit-btn">Submit complaint</button>
+      <button type="submit" class="btn submit-btn">Submit complaint</button>
     </form>
-  </div></section></main>
-  <footer class="site-footer"><div class="container footer-inner">
-    <p>Mess Feedback and Complaint | Fundamentals of Web Design project by Srishti Dahiya, Section D</p>
-  </div></footer>
+  </section>
+  </main>
+  <footer>Mess Feedback and Complaint | Fundamentals of Web Design project by Srishti Dahiya, Section D</footer>
+  <script src="script.js"></script>
 </body>
 </html>
