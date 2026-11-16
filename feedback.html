@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Feedback | SAU Mess Feedback and Complaint</title>
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+  <header>
+    <a class="brand" href="home.html"><img class="logo" src="logo.png" alt="South Asian University logo" onerror="this.hidden=true;this.parentNode.classList.add('nologo')">SAU Mess Portal</a>
+    <nav>
+      <a href="home.html">Home</a>
+      <a class="active" href="feedback.html">Quick Feedback</a>
+      <a href="submit.html">Submit Complaint</a>
+      <a href="board.html">Complaints Board</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main><section>
+    <h2>Quick Feedback</h2>
+    <p class="form-intro">Takes 10 seconds. Tap a face right after your meal.</p>
+    <div class="msg" id="fbDone" role="status" hidden>Thank you! Your feedback was recorded. <span id="fbLink"></span></div>
+    <form class="feedback-form" id="feedbackForm">
+      <fieldset>
+        <legend>Your meal</legend>
+        <div class="field"><label for="fmeal">Meal *</label><select id="fmeal" name="meal" required><option value="">Select a meal</option><option>Breakfast</option><option>Lunch</option><option>Snacks</option><option>Dinner</option></select></div>
+        <div class="field"><span class="label">How was it? *</span>
+          <div class="faces">
+            <label><input type="radio" name="mood" value="Happy" required><span>&#128522;<small>Good</small></span></label>
+            <label><input type="radio" name="mood" value="Neutral"><span>&#128528;<small>Okay</small></span></label>
+            <label><input type="radio" name="mood" value="Sad"><span>&#128542;<small>Bad</small></span></label>
+          </div></div>
+        <div class="field"><label for="fcomment">Anything to add?</label><input type="text" id="fcomment" name="comment" maxlength="200" placeholder="Optional"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Meal reminder</legend>
+        <div class="field"><span class="label">Send me the feedback link by</span>
+          <div class="options">
+            <label class="high"><input type="radio" name="notify" value="whatsapp"><span>WhatsApp</span></label>
+            <label class="high"><input type="radio" name="notify" value="email"><span>Email</span></label>
+            <label class="high"><input type="radio" name="notify" value="none" checked><span>None</span></label>
+          </div></div>
+        <div class="field" id="contactWrap" hidden><label for="contact" id="contactLabel">Contact</label><input type="text" id="contact" name="contact"></div>
+      </fieldset>
+      <button type="submit" class="btn submit-btn">Send feedback</button>
+    </form>
+  </section></main>
+  <footer>SAU Mess Feedback and Complaint | South Asian University, Maidan Garhi, New Delhi | Knowledge without borders<br>Fundamentals of Web Design project by Srishti Dahiya, Section D</footer>
+  <script src="script.js"></script>
+</body>
+</html>
