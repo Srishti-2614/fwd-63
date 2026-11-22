@@ -13,6 +13,27 @@ function mk(tag, text, cls) {
   return n;
 }
 
+/* Dark / light mode */
+(function () {
+  const root = document.documentElement, nav = document.querySelector('nav');
+  if (!nav) return;
+  const btn = mk('button', '', 'theme-toggle');
+  btn.type = 'button';
+  function paint() {
+    const dark = root.dataset.theme === 'dark';
+    btn.textContent = dark ? '\u2600 Light' : '\u263E Dark';
+    btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+  btn.addEventListener('click', () => {
+    const t = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = t;
+    try { localStorage.setItem('messTheme', t); } catch (e) {}
+    paint();
+  });
+  paint();
+  nav.appendChild(btn);
+})();
+
 /* Complaint form */
 const form = document.getElementById('complaintForm');
 if (form) {
